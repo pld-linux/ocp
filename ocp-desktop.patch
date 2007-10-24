@@ -1,0 +1,20 @@
+--- ocp-0.1.14/desktop/opencubicplayer.desktop.in~	2007-10-21 19:45:23.000000000 +0200
++++ ocp-0.1.14/desktop/opencubicplayer.desktop.in	2007-10-24 23:47:58.000000000 +0200
+@@ -1,9 +1,11 @@
+ [Desktop Entry]
+ Name=Open Cubic Player
+-Comment=Open Cubic Player @PACKAGE_VERSION@ for UNIX 
+-Encoding=Legacy-Mixed
+-Exec=@BINDIR@/ocp
+-Icon=mini/opencubicplayer_mini.xpm
+-Terminal=0
++Comment=Open Cubic Player for UNIX
++Comment[pl]=Open Cubic Player dla UNIXa
++Encoding=UTF-8
++Exec=ocp
++Icon=opencubicplayer.xpm
++Terminal=false
+ Type=Application
+-Categories=Application;AudioVideo;
++Categories=AudioVideo;Player;
++# vi: encoding=utf-8
