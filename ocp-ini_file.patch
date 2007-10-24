@@ -1,0 +1,13 @@
+--- ocp-0.1.14/Makefile.in~	2007-10-21 19:45:23.000000000 +0200
++++ ocp-0.1.14/Makefile.in	2007-10-24 22:05:55.000000000 +0200
+@@ -10,8 +10,8 @@
+ 	$(CP) AUTHORS BUGS COPYING CREDITS KEYBOARD_REMAPS SUID TODO "$(DESTDIR)$(PREFIX)/share/ocp$(DIR_SUFFIX)"
+ 	mkdir -p "$(DESTDIR)$(PREFIX)/share/ocp$(DIR_SUFFIX)/data"
+ 	$(CP) ocp.pak "$(DESTDIR)$(PREFIX)/share/ocp$(DIR_SUFFIX)/data"
+-	mkdir -p "$(DESTDIR)$(PREFIX)/share/ocp$(DIR_SUFFIX)/etc"
+-	$(CP) ocp.ini "$(DESTDIR)$(PREFIX)/share/ocp$(DIR_SUFFIX)/etc"
++	mkdir -p "$(DESTDIR)/etc"
++	$(CP) ocp.ini "$(DESTDIR)/etc"
+ 	mkdir -p "$(DESTDIR)$(LIBDIR)"
+ 	$(CP) *$(LIB_SUFFIX) "$(DESTDIR)$(LIBDIR)"
+ 	mkdir -p "$(DESTDIR)$(LIBDIR)/autoload"
