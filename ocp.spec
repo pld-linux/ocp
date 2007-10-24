@@ -1,3 +1,6 @@
+# TODO
+# - check what is /usr/lib/ocp/autoload direcroty for
+# - should we pack .so files in -devel package?
 Summary:	-
 Summary(pl.UTF-8):	-
 Name:		ocp
@@ -9,6 +12,11 @@ Source0:	http://stian.lunafish.org/ocp/%{name}-%{version}.tar.bz2
 # Source0-md5:	97a4c79361938b0a0ec614c3851fa53e
 Patch0:		%{name}-ini_file.patch
 URL:		http://stian.lunafish.org/project-ocp.php
+BuildRequires:	libid3tag-devel
+BuildRequires:	libmad-devel
+BuildRequires:	libogg-devel
+BuildRequires:	libvorbis-devel
+BuildRequires:	ncurses-devel
 BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
