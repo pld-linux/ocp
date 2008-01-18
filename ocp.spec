@@ -4,12 +4,12 @@
 Summary:	A console music player
 Summary(pl.UTF-8):	Konsolowy odtwarzacz muzyczny
 Name:		ocp
-Version:	0.1.14
+Version:	0.1.15
 Release:	0.1
 License:	GPL v2+
 Group:		Applications/Sound
 Source0:	http://stian.lunafish.org/ocp/%{name}-%{version}.tar.bz2
-# Source0-md5:	97a4c79361938b0a0ec614c3851fa53e
+# Source0-md5:	b936f236b41e7f1184e401f5e099debe
 Patch0:		%{name}-ini_file.patch
 Patch1:		%{name}-desktop.patch
 Patch2:		%{name}-Makefile.patch
