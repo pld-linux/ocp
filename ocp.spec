@@ -1,6 +1,5 @@
 # TODO
-# - check what is /usr/lib/ocp/autoload direcroty for
-# - should we pack .so files in -devel package?
+# - check what is /usr/lib/ocp/autoload directory for
 Summary:	A console music player
 Summary(pl.UTF-8):	Konsolowy odtwarzacz muzyczny
 Name:		ocp
@@ -14,12 +13,20 @@ Patch0:		%{name}-ini_file.patch
 Patch1:		%{name}-desktop.patch
 Patch2:		%{name}-Makefile.patch
 URL:		http://stian.lunafish.org/project-ocp.php
+BuildRequires:	adplug-devel
+BuildRequires:	alsa-lib-devel
+BuildRequires:	flac-devel
 BuildRequires:	libid3tag-devel
 BuildRequires:	libmad-devel
 BuildRequires:	libogg-devel
+BuildRequires:	libstdc++-devel
 BuildRequires:	libvorbis-devel
 BuildRequires:	ncurses-devel
+BuildRequires:	pkgconfig
 BuildRequires:	sed >= 4.0
+BuildRequires:	xorg-lib-libXext-devel
+BuildRequires:	xorg-lib-libXxf86vm-devel
+BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -27,8 +34,8 @@ Open Cubic Player is a music player which can play a wide variety of
 music formats.
 
 %description -l pl.UTF-8
-Open Cubic Player jest odtwarzaczem muzycznym, który potrafi
-odtwarzać szeroką gamę formatów muzyki.
+Open Cubic Player jest odtwarzaczem muzycznym, który potrafi odtwarzać
+szeroką gamę formatów muzyki.
 
 %prep
 %setup -q
@@ -61,5 +68,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/opencubicplayer.desktop
 %dir %{_libdir}/%{name}
 %dir %{_libdir}/%{name}/autoload
-%{_libdir}/%{name}/*.so
+%attr(755,root,root) %{_libdir}/%{name}/*.so
 %{_pixmapsdir}/opencubicplayer.xpm
