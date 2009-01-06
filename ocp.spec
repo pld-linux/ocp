@@ -3,12 +3,12 @@
 Summary:	A console music player
 Summary(pl.UTF-8):	Konsolowy odtwarzacz muzyczny
 Name:		ocp
-Version:	0.1.15
+Version:	0.1.16
 Release:	0.1
 License:	GPL v2+
 Group:		Applications/Sound
 Source0:	http://stian.lunafish.org/ocp/%{name}-%{version}.tar.bz2
-# Source0-md5:	b936f236b41e7f1184e401f5e099debe
+# Source0-md5:	9b2e0f4d7ddf7bc39ec026ef80187c8a
 Patch0:		%{name}-ini_file.patch
 Patch1:		%{name}-desktop.patch
 Patch2:		%{name}-Makefile.patch
@@ -43,7 +43,6 @@ szeroką gamę formatów muzyki.
 %patch1 -p1
 %patch2 -p1
 %{__sed} -i 's@<curses.h>@<ncurses/curses.h>@' `grep -R '<curses.h>' * | cut -d":" -f1`
-
 %build
 %configure \
 	--with-dir-suffix=""
