@@ -1,5 +1,6 @@
 # TODO
 # - check what is /usr/lib/ocp/autoload directory for
+# - problems with .so files (undefined symbols)
 Summary:	A console music player
 Summary(pl.UTF-8):	Konsolowy odtwarzacz muzyczny
 Name:		ocp
