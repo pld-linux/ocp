@@ -43,7 +43,8 @@ szeroką gamę formatów muzyki.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%{__sed} -i 's@<curses.h>@<ncurses/curses.h>@' `grep -R '<curses.h>' * | cut -d":" -f1`
+%{__sed} -i 's@<curses.h>@<ncurses/curses.h>@' `grep -r -l '<curses.h>' .`
+
 %build
 %configure \
 	--with-dir-suffix=""
