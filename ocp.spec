@@ -4,16 +4,16 @@
 Summary:	A console music player
 Summary(pl.UTF-8):	Konsolowy odtwarzacz muzyczny
 Name:		ocp
-Version:	0.1.16
+Version:	0.1.17
 Release:	0.1
 License:	GPL v2+
 Group:		Applications/Sound
-Source0:	http://stian.lunafish.org/ocp/%{name}-%{version}.tar.bz2
-# Source0-md5:	9b2e0f4d7ddf7bc39ec026ef80187c8a
+Source0:	http://stian.cubic.org/ocp/%{name}-%{version}.tar.bz2
+# Source0-md5:	69c820c7170e6c7d7708f79c66ff2ea3
 Patch0:		%{name}-ini_file.patch
 Patch1:		%{name}-desktop.patch
 Patch2:		%{name}-Makefile.patch
-URL:		http://stian.lunafish.org/project-ocp.php
+URL:		http://stian.cubic.org/project-ocp.php
 BuildRequires:	adplug-devel
 BuildRequires:	alsa-lib-devel
 BuildRequires:	flac-devel
