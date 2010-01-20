@@ -1,17 +1,18 @@
---- ocp-0.1.16/Makefile.in~	2009-01-06 09:19:16.000000000 +0100
-+++ ocp-0.1.16/Makefile.in	2009-01-06 09:22:17.000000000 +0100
-@@ -16,7 +16,6 @@
+--- ocp-0.1.18/Makefile.in~	2010-01-20 12:55:09.523239281 +0100
++++ ocp-0.1.18/Makefile.in	2010-01-20 13:02:50.896529537 +0100
+@@ -35,8 +35,6 @@
+ 
  
  install: all
- 	mkdir -p "$(DESTDIR)$(PREFIX)/share/doc/ocp$(DIR_SUFFIX)"
+-	mkdir -p "$(DESTDIR)$(PREFIX)/share/doc/ocp$(DIR_SUFFIX)"
 -	$(CP) AUTHORS BUGS COPYING CREDITS KEYBOARD_REMAPS SUID TODO "$(DESTDIR)$(PREFIX)/share/doc/ocp$(DIR_SUFFIX)"
  	mkdir -p "$(DESTDIR)$(PREFIX)/share/ocp$(DIR_SUFFIX)/data"
- 	$(CP) ocp.pak "$(DESTDIR)$(PREFIX)/share/ocp$(DIR_SUFFIX)/data"
+ 	$(CP) ocp.hlp "$(DESTDIR)$(PREFIX)/share/ocp$(DIR_SUFFIX)/data"
  	mkdir -p "$(DESTDIR)/etc"
-@@ -28,15 +27,10 @@
- 	mkdir -p "$(DESTDIR)$(BINDIR)"
- 	$(CP) ocp "$(DESTDIR)$(BINDIR)/ocp$(DIR_SUFFIX)"
- 	if ! test -z $(DIR_SUFFIX); then ln -sf "ocp$(DIR_SUFFIX)" "$(DESTDIR)$(BINDIR)/ocp"; fi
+@@ -60,15 +58,10 @@
+ ifeq ($(HAVE_X11),1)
+ 	$(CP) ocp-x11 "$(DESTDIR)$(BINDIR)/ocp-x11"
+ endif
 -	$(CP) ultrafix.sh "$(DESTDIR)$(BINDIR)/ultrafix.sh"
 -	mkdir -p "$(DESTDIR)$(ULTRADIR)"
 -	$(MAKE) -C doc DESTDIR="$(DESTDIR)" install TOPDIR="../$(TOPDIR)"
@@ -24,13 +25,13 @@
 -	$(CP) desktop/opencubicplayer "$(DESTDIR)$(SYSCONFDIR)/X11/wmconfig"
 +	$(CP) desktop/opencubicplayer.xpm "$(DESTDIR)$(PREFIX)/share/pixmaps"
  endif
- 	$(MAKE) -C binfile TOPDIR=../$(TOPDIR) install
  	$(MAKE) -C boot TOPDIR=../$(TOPDIR) install
-@@ -64,7 +58,6 @@
+ 	$(MAKE) -C cpiface TOPDIR=../$(TOPDIR) install
+@@ -95,7 +88,6 @@
  	$(MAKE) -C playxm TOPDIR=../$(TOPDIR) install
  	$(MAKE) -C stuff TOPDIR=../$(TOPDIR) install
  	$(MAKE) -C medialib TOPDIR=../$(TOPDIR) install
 -	$(MAKE) -C doc TOPDIR="../$(TOPDIR)" install
  
  uninstall:
- 	$(MAKE) -C binfile TOPDIR=../$(TOPDIR) uninstall
+ 	$(MAKE) -C boot TOPDIR=../$(TOPDIR) uninstall
