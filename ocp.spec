@@ -1,15 +1,16 @@
 # TODO
 # - check what is /usr/lib/ocp/autoload directory for
 # - problems with .so files (undefined symbols)
+#
 Summary:	A console music player
 Summary(pl.UTF-8):	Konsolowy odtwarzacz muzyczny
 Name:		ocp
-Version:	0.1.17
+Version:	0.1.18
 Release:	0.1
 License:	GPL v2+
 Group:		Applications/Sound
 Source0:	http://stian.cubic.org/ocp/%{name}-%{version}.tar.bz2
-# Source0-md5:	69c820c7170e6c7d7708f79c66ff2ea3
+# Source0-md5:	1a93bf617c10d3569ec0188fbf74df8a
 Patch0:		%{name}-ini_file.patch
 Patch1:		%{name}-desktop.patch
 Patch2:		%{name}-Makefile.patch
@@ -24,7 +25,7 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libvorbis-devel
 BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig
-BuildRequires:	sed >= 4.0
+#BuildRequires:	sed >= 4.0
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXxf86vm-devel
 BuildRequires:	zlib-devel
@@ -43,11 +44,13 @@ szeroką gamę formatów muzyki.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%{__sed} -i 's@<curses.h>@<ncurses/curses.h>@' `grep -r -l '<curses.h>' .`
+
+%{__sed} -i 's,curses\.h,ncurses/curses\.h,' configure
 
 %build
 %configure \
-	--with-dir-suffix=""
+	--with-dir-suffix="" \
+	CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
 %{__make}
 
 %install
