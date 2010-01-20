@@ -1,0 +1,11 @@
+--- ocp-0.1.18/Makefile.in~	2010-01-20 15:14:42.209068598 +0100
++++ ocp-0.1.18/Makefile.in	2010-01-20 15:14:50.059065836 +0100
+@@ -191,7 +191,7 @@
+ 	$(CC) $(SHARED_FLAGS) $(ICONV_LIBS) -o $@ $(fstypes_so)
+ 
+ libocp$(LIB_SUFFIX): $(libocp_so)
+-	$(CC) $(SHARED_FLAGS) $(STATIC_LIBS) -o $@ $(libocp_so)
++	$(CC) $(SHARED_FLAGS) $(STATIC_LIBS) -o $@ $(libocp_so) @DL_LIBS@
+ 
+ # DUMMIES
+ 
