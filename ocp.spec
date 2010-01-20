@@ -25,7 +25,7 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libvorbis-devel
 BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig
-#BuildRequires:	sed >= 4.0
+BuildRequires:	sed >= 4.0
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXxf86vm-devel
 BuildRequires:	zlib-devel
