@@ -14,6 +14,7 @@ Source0:	http://stian.cubic.org/ocp/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-ini_file.patch
 Patch1:		%{name}-desktop.patch
 Patch2:		%{name}-Makefile.patch
+Patch3:		%{name}-link.patch
 URL:		http://stian.cubic.org/project-ocp.php
 BuildRequires:	adplug-devel
 BuildRequires:	alsa-lib-devel
@@ -44,6 +45,7 @@ szeroką gamę formatów muzyki.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %{__sed} -i 's,curses\.h,ncurses/curses\.h,' configure
 
