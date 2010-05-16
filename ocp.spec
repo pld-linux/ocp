@@ -1,12 +1,8 @@
-# TODO
-# - check what is /usr/lib/ocp/autoload directory for
-# - problems with .so files (undefined symbols)
-#
 Summary:	A console music player
 Summary(pl.UTF-8):	Konsolowy odtwarzacz muzyczny
 Name:		ocp
 Version:	0.1.19
-Release:	0.1
+Release:	1
 License:	GPL v2+
 Group:		Applications/Sound
 Source0:	http://stian.cubic.org/ocp/%{name}-%{version}.tar.bz2
@@ -72,7 +68,8 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/data
 %{_desktopdir}/opencubicplayer.desktop
-%dir %{_libdir}/%{name}
 %dir %{_libdir}/%{name}/autoload
-%attr(755,root,root) %{_libdir}/%{name}/*.so
+%{_libdir}/%{name}/autoload/*.so
+%dir %{_libdir}/%{name}
+%{_libdir}/%{name}/*.so
 %{_pixmapsdir}/opencubicplayer.xpm
