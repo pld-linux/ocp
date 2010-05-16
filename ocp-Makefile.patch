@@ -1,5 +1,5 @@
---- ocp-0.1.18/Makefile.in~	2010-01-20 12:55:09.523239281 +0100
-+++ ocp-0.1.18/Makefile.in	2010-01-20 13:02:50.896529537 +0100
+--- ocp-0.1.19/Makefile.in~	2010-05-16 11:33:51.712738731 +0200
++++ ocp-0.1.19/Makefile.in	2010-05-16 11:37:12.162807478 +0200
 @@ -35,8 +35,6 @@
  
  
@@ -9,29 +9,29 @@
  	mkdir -p "$(DESTDIR)$(PREFIX)/share/ocp$(DIR_SUFFIX)/data"
  	$(CP) ocp.hlp "$(DESTDIR)$(PREFIX)/share/ocp$(DIR_SUFFIX)/data"
  	mkdir -p "$(DESTDIR)/etc"
-@@ -60,15 +58,10 @@
+@@ -60,14 +58,10 @@
  ifeq ($(HAVE_X11),1)
  	$(CP) ocp-x11 "$(DESTDIR)$(BINDIR)/ocp-x11"
  endif
 -	$(CP) ultrafix.sh "$(DESTDIR)$(BINDIR)/ultrafix.sh"
 -	mkdir -p "$(DESTDIR)$(ULTRADIR)"
 -	$(MAKE) -C doc DESTDIR="$(DESTDIR)" install TOPDIR="../$(TOPDIR)"
+-
  ifeq ($(HAVE_X11),1)
--	mkdir -p "$(DESTDIR)$(PREFIX)/share/applications" "$(DESTDIR)$(PREFIX)/share/icons/hicolor/16x16/apps/" "$(DESTDIR)$(PREFIX)/share/icons/hicolor/48x48/apps/" "$(DESTDIR)$(SYSCONFDIR)/X11/wmconfig"
-+	mkdir -p "$(DESTDIR)$(PREFIX)/share/applications" "$(DESTDIR)$(PREFIX)/share/pixmaps"
- 	$(CP) desktop/opencubicplayer.desktop "$(DESTDIR)$(PREFIX)/share/applications"
+-	mkdir -p "$(DESTDIR)$(PREFIX)/share/applications" "$(DESTDIR)$(PREFIX)/share/icons/hicolor/16x16/apps/" "$(DESTDIR)$(PREFIX)/share/icons/hicolor/48x48/apps/"
 -	$(CP) desktop/opencubicplayer.xpm "$(DESTDIR)$(PREFIX)/share/icons/hicolor/48x48/apps/opencubicplayer.xpm"
 -	$(CP) desktop/opencubicplayer_mini.xpm "$(DESTDIR)$(PREFIX)/share/icons/hicolor/16x16/apps/opencubicplayer.xpm"
--	$(CP) desktop/opencubicplayer "$(DESTDIR)$(SYSCONFDIR)/X11/wmconfig"
++	mkdir -p "$(DESTDIR)$(PREFIX)/share/applications" "$(DESTDIR)$(PREFIX)/share/pixmaps"
++	$(CP) desktop/opencubicplayer.desktop "$(DESTDIR)$(PREFIX)/share/applications"
 +	$(CP) desktop/opencubicplayer.xpm "$(DESTDIR)$(PREFIX)/share/pixmaps"
  endif
- 	$(MAKE) -C boot TOPDIR=../$(TOPDIR) install
- 	$(MAKE) -C cpiface TOPDIR=../$(TOPDIR) install
-@@ -95,7 +88,6 @@
- 	$(MAKE) -C playxm TOPDIR=../$(TOPDIR) install
+ 
+ ifeq ($(HAVE_X11),1)
+@@ -104,7 +98,6 @@
+ 	$(MAKE) -C playym TOPDIR=../$(TOPDIR) install
  	$(MAKE) -C stuff TOPDIR=../$(TOPDIR) install
  	$(MAKE) -C medialib TOPDIR=../$(TOPDIR) install
 -	$(MAKE) -C doc TOPDIR="../$(TOPDIR)" install
  
  uninstall:
- 	$(MAKE) -C boot TOPDIR=../$(TOPDIR) uninstall
+ 	$(MAKE) -C asm_emu TOPDIR=../$(TOPDIR) uninstall

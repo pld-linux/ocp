@@ -1,8 +1,9 @@
---- ocp-0.1.16/desktop/opencubicplayer.desktop.in~	2009-01-06 09:05:03.000000000 +0100
-+++ ocp-0.1.16/desktop/opencubicplayer.desktop.in	2009-01-06 09:05:03.000000000 +0100
-@@ -1,9 +1,10 @@
+--- ocp-0.1.19/desktop/opencubicplayer.desktop.in~	2010-05-15 20:33:38.000000000 +0200
++++ ocp-0.1.19/desktop/opencubicplayer.desktop.in	2010-05-16 11:32:43.936164827 +0200
+@@ -1,10 +1,11 @@
  [Desktop Entry]
  Name=Open Cubic Player
+ GenericName=Music Player
 -Comment=Open Cubic Player @PACKAGE_VERSION@ for UNIX 
 +Comment=Open Cubic Player for UNIX 
  Encoding=UTF-8
@@ -11,6 +12,5 @@
  Icon=opencubicplayer
  Terminal=false
  Type=Application
--Categories=Application;AudioVideo;
-+Categories=AudioVideo;Player;
+ Categories=Application;AudioVideo;Audio;
 +# vi: encoding=utf-8
