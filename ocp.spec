@@ -12,18 +12,23 @@ Patch1:		%{name}-desktop.patch
 Patch2:		%{name}-Makefile.patch
 Patch3:		%{name}-link.patch
 URL:		http://stian.cubic.org/project-ocp.php
+BuildRequires:	SDL-devel
 BuildRequires:	adplug-devel
 BuildRequires:	alsa-lib-devel
+BuildRequires:	desktop-file-utils
 BuildRequires:	flac-devel
 BuildRequires:	libid3tag-devel
 BuildRequires:	libmad-devel
 BuildRequires:	libogg-devel
+BuildRequires:	libsidplay-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	libvorbis-devel
 BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig
 BuildRequires:	sed >= 4.0
+BuildRequires:	texinfo
 BuildRequires:	xorg-lib-libXext-devel
+BuildRequires:	xorg-lib-libXpm-devel
 BuildRequires:	xorg-lib-libXxf86vm-devel
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -43,18 +48,19 @@ szeroką gamę formatów muzyki.
 %patch2 -p1
 %patch3 -p1
 
-%{__sed} -i 's,curses\.h,ncurses/curses\.h,' configure
+%{__sed} -i 's,curses\.h,ncurses/curses\.h,' \
+	configure playsid/sidpplay.cpp
 
 %build
 %configure \
 	--with-dir-suffix="" \
 	CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
-%{__make}
+%{__make} -j1
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
+%{__make} -j1 install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
