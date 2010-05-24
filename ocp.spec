@@ -1,12 +1,12 @@
 Summary:	A console music player
 Summary(pl.UTF-8):	Konsolowy odtwarzacz muzyczny
 Name:		ocp
-Version:	0.1.19
+Version:	0.1.20
 Release:	1
 License:	GPL v2+
 Group:		Applications/Sound
 Source0:	http://stian.cubic.org/ocp/%{name}-%{version}.tar.bz2
-# Source0-md5:	b7879e7d284f0e0c92bbb3cea2e364f0
+# Source0-md5:	f34eca80239e619bff0593b8bf665f98
 Patch0:		%{name}-ini_file.patch
 Patch1:		%{name}-desktop.patch
 Patch2:		%{name}-Makefile.patch
@@ -70,7 +70,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/ocp.ini
 %doc AUTHORS CREDITS Changelog README.Darwin SUID TODO doc/*
-%attr(755,root,root) %{_bindir}/%{name}
+%attr(755,root,root) %{_bindir}/ocp*
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/data
 %{_desktopdir}/opencubicplayer.desktop
